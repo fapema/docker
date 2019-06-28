@@ -1,0 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t fapema/php ./php
+  - docker build -t fapema/nginx ./nginx
