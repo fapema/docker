@@ -26,7 +26,7 @@ RUN set -ex && \
     cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini && \
     sed -i "/post_max_size = .*/c\post_max_size = 100M" /usr/local/etc/php/php.ini && \
     sed -i "/upload_max_filesize = .*/c\upload_max_filesize = 100M" /usr/local/etc/php/php.ini && \
-    sed -i "/memory_limit = .*/c\memory_limit = -1" /usr/local/etc/php/php.ini
+    sed -i "/memory_limit = .*/c\memory_limit = 1024M" /usr/local/etc/php/php.ini
 
 CMD ["php-fpm"]
 
