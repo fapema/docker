@@ -5,10 +5,13 @@ RUN set -ex && \
     apk add --update --no-cache \
         postgresql-dev \
         libzip-dev \
-        libxml2-dev && \
+        libxml2-dev \
+        libpng-dev \
+        libjpeg-turbo-dev && \
     # php ext
     docker-php-ext-install \
         zip \
+        gd \
         xml \
         simplexml \
         soap \
