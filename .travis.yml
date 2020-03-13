@@ -4,5 +4,6 @@ services:
   - docker
 
 script:
-  - docker build -t fapema/php ./php
+  - docker build -t fapema/php:7.4.3 ./php/7.4.3
+  - docker build -t fapema/php:7.3.15 ./php/7.3.15
   - docker build -t fapema/nginx ./nginx

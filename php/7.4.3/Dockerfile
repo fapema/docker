@@ -1,4 +1,4 @@
-FROM php:7.3.6-fpm-alpine
+FROM php:7.4.3-fpm-alpine
 
 RUN set -ex && \
     # packages
@@ -7,6 +7,7 @@ RUN set -ex && \
         libzip-dev \
         libxml2-dev \
         libpng-dev \
+        oniguruma-dev \
         libjpeg-turbo-dev && \
     # php ext
     docker-php-ext-install \
@@ -15,13 +16,13 @@ RUN set -ex && \
         xml \
         simplexml \
         soap \
-        mbstring \
         tokenizer \
         pdo \
         pdo_pgsql \
         pdo_mysql \
         pgsql \
         mysqli \
+        mbstring \
         bcmath && \
     # composer
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
